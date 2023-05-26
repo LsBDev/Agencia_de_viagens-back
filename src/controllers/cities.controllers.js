@@ -1,4 +1,4 @@
-import { getInfoCityIdDB, getCitiesDB } from "../repositories/cities.repository.js"
+import { getFlyCityIdDB, getCitiesDB } from "../repositories/cities.repository.js"
 
 export async function getCities(req, res) {
   try {
@@ -10,9 +10,9 @@ export async function getCities(req, res) {
   }
 }
 
-export async function getInfoCityId(req, res) {
+export async function getFlyCityId(req, res) {
   try {
-    const { rows } = await getInfoCityIdDB(req.params)
+    const { rows } = await getFlyCityIdDB(req.params)
     res.status(200).send(rows)
 
   }catch(err) {

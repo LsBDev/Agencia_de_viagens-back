@@ -1,10 +1,8 @@
 import {Router} from "express"
-import { getCities, getInfoCityId } from "../controllers/cities.controllers.js"
+import { getCities, getFlyCityId } from "../controllers/cities.controllers.js"
 
 const citiesRouter = Router()
-
 citiesRouter.get("/", getCities)
-citiesRouter.get("/info/city/:id", getInfoCityId)
-
+citiesRouter.get("/fly/city/:id", getFlyCityId)
 
 export default citiesRouter
