@@ -17,3 +17,11 @@ export function getFlyCityIdDB(params) {
   `, [id])
   return result
 }
+
+export function  insertCityDB(body) {
+  const {name} = body
+  const result = db.query(`
+    INSERT INTO city(name) VALUES($1);
+  `, [name])
+  return result
+}

@@ -1,4 +1,4 @@
-import { getFlyCityIdDB, getCitiesDB } from "../repositories/cities.repository.js"
+import { getFlyCityIdDB, getCitiesDB, insertCityDB } from "../repositories/cities.repository.js"
 
 export async function getCities(req, res) {
   try {
@@ -15,7 +15,17 @@ export async function getFlyCityId(req, res) {
     const { rows } = await getFlyCityIdDB(req.params)
     res.status(200).send(rows)
 
-  }catch(err) {
+  } catch(err) {
+    res.status(500).send(err.message)
+  }
+}
+
+export async function insertCity(req, res) {
+  try {
+    await insertCityDB(req.body)
+    res.sendStatus(200)
+
+  } catch(err) {
     res.status(500).send(err.message)
   }
 }

@@ -5,7 +5,7 @@ export function getHostingCityIdDB(params) {
 
   const result = db.query(`
     SELECT a.id, a.name, a.description, a.price
-    FROM accommodation a
+    FROM accommodation AS a
     WHERE a.city_id = $1;
   `, [id])
   return result

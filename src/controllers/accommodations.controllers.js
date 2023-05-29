@@ -17,7 +17,6 @@ export async function getHostingId(req, res) {
     res.status(200).send(rows)
 
   } catch(err) {
-    console.log("caiu no catch")
     res.status(500).send(err.message)
   }
 }
